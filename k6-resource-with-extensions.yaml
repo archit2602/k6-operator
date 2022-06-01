@@ -1,0 +1,16 @@
+apiVersion: k6.io/v1alpha1
+kind: K6
+metadata:
+  name: k6-sample-with-extensions
+spec:
+  parallelism: 4
+  script:
+    configMap:
+      name: crocodile-stress-test
+      file: test.js
+  arguments: --out prometheus
+  ports:
+  - containerPort: 5656
+    name: metrics
+  runner:
+    image: k6-prometheus:latest

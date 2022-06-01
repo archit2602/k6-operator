@@ -1,0 +1,14 @@
+name: GitHub Actions Demo
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: minikube start
+#       - run: helm install prometheus prometheus-community/prometheus -f values.yaml
+#       - run: helm repo add grafana https://grafana.github.io/helm-charts
+#       - run: helm install grafana grafana/grafana
+      - run: kubectl port-forward deployment/prometheus-server 9090  
+#       - run: go install go.k6.io/xk6/cmd/xk6@latest
+#       - run: xk6 build --with github.com/grafana/xk6-output-prometheus-remote
+      - run: K6_PROMETHEUS_REMOTE_URL=http://localhost:9090/api/v1/write ./k6 run tests/graphqlAPI.js -o output-prometheus-remote
