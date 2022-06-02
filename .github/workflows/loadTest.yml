@@ -27,7 +27,7 @@ jobs:
       - name: Run local k6 test
         uses: grafana/k6-action@v0.2.0
         with:
-          filename: tests/graphqlAPI.js
+          filename: tests/*.js
           cloud: true
           token: ${{ secrets.K6_CLOUD_API_TOKEN }}
   build:
