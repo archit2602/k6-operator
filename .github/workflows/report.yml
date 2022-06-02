@@ -17,7 +17,7 @@ on:
 
 jobs:
   k6_load_test:
-    name: k6 Load Test
+    name: k6 Report test
     runs-on: ubuntu-latest
 
     steps:
