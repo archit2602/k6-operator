@@ -8,10 +8,10 @@ export const options = {
       { duration: '20s', target: 4 },
     ],
 
-    thresholds: {
-      // 90% of requests must finish within 400ms.
-      http_req_duration: ['p(90) < 400'],
-    },
+    // thresholds: {
+    //   // 90% of requests must finish within 400ms.
+    //   http_req_duration: ['p(90) < 400'],
+    // },
   };
 
   export default function () {
