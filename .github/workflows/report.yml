@@ -36,7 +36,7 @@ jobs:
           name: k6-report
           path: results.json
       - name: PR Comment from File
-        uses: machine-learning-apps/pr-comment@1.0.0
+        uses: patrickeasters/comment-on-pr@v1.1.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
