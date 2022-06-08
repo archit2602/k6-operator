@@ -6,9 +6,13 @@ const BASE_URL = 'https://graphql.lottiefiles.com';
 
 export const options = {
     stages: [
-      { duration: '10s', target: 100 },
-      { duration: '10s', target: 999 },
-    ]
+      { duration: '2m', target: 10 },
+      { duration: '1m', target: 5 },
+      { duration: '30s', target: 0 },
+    ],
+     thresholds: {
+    http_reqs: ['count < 100'],
+  },
   };
 
   export default function () {
