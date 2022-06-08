@@ -36,9 +36,9 @@ jobs:
           name: k6-report
           path: results.json
       - name: PR Comment from File
-        uses: unsplash/comment-on-pr@v1.3.0
+      - name: comment PR
+        uses: machine-learning-apps/pr-comment@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          msg: "Check out this message!"
           path: results.json
